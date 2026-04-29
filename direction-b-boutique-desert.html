@@ -1,0 +1,804 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Training &amp; Discipline — A boutique training studio in Palm Springs.</title>
+<meta name="description" content="A boutique personal-training studio in downtown Palm Springs. Four certified trainers. Sessions by appointment, no membership required. From $50.">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Training & Discipline">
+<meta property="og:title" content="Training & Discipline — A boutique training studio in Palm Springs.">
+<meta property="og:description" content="A boutique personal-training studio in downtown Palm Springs. Four certified trainers. By appointment.">
+<meta property="og:url" content="https://banana-daddy.github.io/training-and-discipline/direction-b-boutique-desert.html">
+<meta property="og:image" content="https://banana-daddy.github.io/training-and-discipline/images/og.jpg">
+<meta property="og:image:secure_url" content="https://banana-daddy.github.io/training-and-discipline/images/og.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Training & Discipline team — four certified trainers in their Palm Springs studio.">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Training & Discipline — A boutique training studio in Palm Springs.">
+<meta name="twitter:description" content="A boutique personal-training studio in downtown Palm Springs. Four certified trainers. By appointment.">
+<meta name="twitter:image" content="https://banana-daddy.github.io/training-and-discipline/images/og.jpg">
+<meta name="twitter:image:alt" content="The Training & Discipline team in their Palm Springs studio.">
+
+<meta name="theme-color" content="#F4ECE0">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="apple-touch-icon" sizes="512x512" href="images/favicon-512.png">
+<link rel="canonical" href="https://banana-daddy.github.io/training-and-discipline/direction-b-boutique-desert.html">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,300;1,9..144,400&family=Inter+Tight:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --sand: #F4ECE0;
+    --sand-warm: #EFE3D2;
+    --paper: #FAF6EE;
+    --ink: #14110D;
+    --ink-soft: #2B2722;
+    --rule: #2B2722;
+    --terracotta: #B8593E;
+    --terracotta-deep: #8E3B26;
+    --mta-yellow: #FCCC0A;
+    --mta-purple: #A626AA;
+    --mta-red: #EE352E;
+    --bamboo: #C99A66;
+    --shadow: 0 30px 60px -30px rgba(20,17,13,0.25);
+  }
+  * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+  html, body { background: var(--sand); color: var(--ink); }
+  body {
+    font-family: 'Inter Tight', system-ui, sans-serif;
+    font-feature-settings: 'cv11','ss01';
+    line-height: 1.5;
+  }
+  .display {
+    font-family: 'Fraunces', 'Times New Roman', serif;
+    font-variation-settings: 'opsz' 144, 'SOFT' 30;
+    line-height: 0.96;
+    letter-spacing: -0.02em;
+  }
+  .display-italic {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-variation-settings: 'opsz' 144, 'SOFT' 50;
+  }
+  .label {
+    font-family: 'Inter Tight', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    font-size: 0.72rem;
+    font-weight: 500;
+  }
+
+  /* Subway route bullets — used as system, not decoration */
+  .bullet { display: inline-flex; align-items: center; justify-content: center; width: 1.25em; height: 1.25em; border-radius: 9999px; font-family: 'Inter Tight', sans-serif; font-weight: 800; font-size: 0.65em; color: #fff; flex-shrink: 0; }
+  .bullet-T, .bullet-D { background: var(--mta-red); }
+  .bullet-C, .bullet-S { background: var(--mta-purple); }
+  .bullet-P, .bullet-Y { background: var(--mta-yellow); color: var(--ink); }
+
+  /* Reveal */
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity 1s ease, transform 1s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+
+  /* Image treatments — warm desert tone */
+  .photo-warm { filter: contrast(1.02) saturate(0.95) brightness(1.02); }
+  .photo-mute { filter: grayscale(0.18) contrast(1.04) saturate(0.92); transition: filter 0.6s ease; }
+  .photo-mute:hover { filter: grayscale(0); }
+
+  /* Selection */
+  ::selection { background: var(--terracotta); color: #fff; }
+
+  /* Marginalia decoration — small ruled lines */
+  .marginalia { font-family: 'Fraunces', serif; font-style: italic; }
+
+  /* Section anchors offset for sticky nav */
+  section[id] { scroll-margin-top: 96px; }
+
+  /* Sand grain texture overlay */
+  .sand-grain {
+    position: relative;
+    isolation: isolate;
+  }
+  .sand-grain::before {
+    content: "";
+    position: absolute; inset: 0;
+    background-image: radial-gradient(circle at 20% 30%, rgba(184,89,62,0.025) 0%, transparent 35%),
+                      radial-gradient(circle at 80% 70%, rgba(20,17,13,0.025) 0%, transparent 40%);
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  /* Disco glow accent for Direction B's signature */
+  .disco-glow { background: radial-gradient(ellipse at center, rgba(252,204,10,0.15) 0%, transparent 65%); }
+
+  /* Pricing serif numerals */
+  .price-num { font-family: 'Fraunces', serif; font-weight: 400; font-variation-settings: 'opsz' 144; letter-spacing: -0.04em; }
+
+  /* Sticky offset */
+  html { scroll-behavior: smooth; }
+</style>
+</head>
+<body class="overflow-x-hidden sand-grain">
+
+<!-- =====  STICKY MINIMAL NAV  ===== -->
+<header class="sticky top-0 z-40 backdrop-blur bg-[color:var(--sand)]/85 border-b border-[color:var(--ink)]/10">
+  <div class="max-w-[1500px] mx-auto px-5 md:px-10 py-4 md:py-5 flex items-center justify-between gap-6">
+    <!-- Wordmark -->
+    <a href="#top" class="flex items-baseline gap-3 group" aria-label="Training and Discipline home">
+      <div class="flex items-center gap-1">
+        <span class="bullet bullet-T">T</span>
+        <span class="bullet bullet-D">D</span>
+      </div>
+      <span class="display text-lg md:text-xl tracking-tight hidden sm:inline">Training <span class="display-italic text-[color:var(--terracotta)]">&amp;</span> Discipline</span>
+    </a>
+
+    <nav aria-label="Primary" class="hidden md:flex items-center gap-7 label text-[color:var(--ink-soft)]">
+      <a href="#about" class="hover:text-[color:var(--terracotta)] transition-colors">The Studio</a>
+      <a href="#trainers" class="hover:text-[color:var(--terracotta)] transition-colors">Trainers</a>
+      <a href="#programs" class="hover:text-[color:var(--terracotta)] transition-colors">Programs</a>
+      <a href="#pricing" class="hover:text-[color:var(--terracotta)] transition-colors">Sessions</a>
+      <a href="#tour" class="hover:text-[color:var(--terracotta)] transition-colors">Inside</a>
+      <a href="#visit" class="hover:text-[color:var(--terracotta)] transition-colors">Visit</a>
+    </nav>
+
+    <a href="https://www.vagaro.com/traininganddiscipline" target="_blank" rel="noopener"
+       class="inline-flex shrink-0 items-center gap-2 bg-[color:var(--ink)] text-[color:var(--paper)] px-4 py-2.5 md:px-5 md:py-3 label hover:bg-[color:var(--terracotta)] transition-colors">
+      Book a session
+      <svg width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 12L12 2M12 2H4M12 2V10" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg>
+    </a>
+  </div>
+</header>
+
+<!-- =====  HERO — full-bleed photo with editorial overlay  ===== -->
+<section id="top" class="relative">
+  <!-- Top metadata strip -->
+  <div class="border-b border-[color:var(--ink)]/10 label text-[color:var(--ink-soft)]">
+    <div class="max-w-[1500px] mx-auto px-5 md:px-10 py-3 flex items-center justify-between gap-4 flex-wrap">
+      <div class="flex items-center gap-3">
+        <span>Palm Springs, California</span>
+        <span aria-hidden="true">·</span>
+        <span>Est. boutique training</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="tel:+17609044111" class="hover:text-[color:var(--terracotta)] transition-colors">760·904·4111</a>
+        <span aria-hidden="true">·</span>
+        <span>By appointment</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Editorial hero -->
+  <div class="max-w-[1500px] mx-auto px-5 md:px-10 pt-14 md:pt-24 pb-10 md:pb-20">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-14 items-end">
+      <!-- Left: headline + CTAs -->
+      <div class="md:col-span-7 lg:col-span-7 reveal in">
+        <div class="flex items-center gap-3 label text-[color:var(--ink-soft)]">
+          <span class="inline-block w-12 h-px bg-[color:var(--ink)]/30"></span>
+          <span>A note for newcomers</span>
+        </div>
+        <h1 class="display mt-7 md:mt-10 text-[12vw] md:text-[8.5vw] lg:text-[8rem] xl:text-[9.5rem] tracking-[-0.025em]">
+          Train in <span class="display-italic text-[color:var(--terracotta)]">the desert.</span><br>
+          Quietly, on your<br>
+          own clock.
+        </h1>
+        <p class="mt-8 md:mt-10 text-lg md:text-xl leading-relaxed max-w-xl text-[color:var(--ink-soft)]">
+          Training &amp; Discipline is a four-trainer boutique studio on East Tahquitz Canyon Way. No membership. No commitment. Just personal training — by appointment, billed per session.
+        </p>
+        <div class="mt-9 md:mt-12 flex flex-wrap gap-3">
+          <a href="https://www.vagaro.com/traininganddiscipline" target="_blank" rel="noopener"
+             class="inline-flex items-center gap-3 bg-[color:var(--ink)] text-[color:var(--paper)] px-7 py-4 label hover:bg-[color:var(--terracotta)] transition-colors">
+            Book your first session
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 12L12 2M12 2H4M12 2V10" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg>
+          </a>
+          <a href="#about" class="inline-flex items-center gap-3 border border-[color:var(--ink)]/30 px-7 py-4 label text-[color:var(--ink)] hover:border-[color:var(--ink)] hover:bg-[color:var(--ink)]/5 transition-colors">
+            About the studio
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: vertical hero photo -->
+      <div class="md:col-span-5 lg:col-span-5 reveal in">
+        <figure class="relative">
+          <img src="images/studio-doors-open.jpg" alt="Glass garage doors fully open at the studio with palms and the San Jacinto mountains beyond." loading="eager" class="photo-warm w-full h-auto block" style="aspect-ratio: 4/5; object-fit: cover;">
+          <figcaption class="mt-4 flex items-baseline gap-3">
+            <span class="display-italic text-base md:text-lg">The studio, this morning.</span>
+            <span class="flex-1 h-px bg-[color:var(--ink)]/20 self-center"></span>
+            <span class="label text-[color:var(--ink-soft)]">N° 01</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <!-- Stats row -->
+    <div class="mt-14 md:mt-20 pt-8 md:pt-10 border-t border-[color:var(--ink)]/15 grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-6">
+      <div>
+        <div class="display text-5xl md:text-6xl">35<span class="text-[color:var(--ink-soft)] text-3xl md:text-4xl"> yr</span></div>
+        <div class="mt-3 label text-[color:var(--ink-soft)]">Owner experience</div>
+      </div>
+      <div>
+        <div class="display text-5xl md:text-6xl">04</div>
+        <div class="mt-3 label text-[color:var(--ink-soft)]">Certified trainers</div>
+      </div>
+      <div>
+        <div class="display text-5xl md:text-6xl">$50<span class="text-[color:var(--terracotta)] text-3xl md:text-4xl">+</span></div>
+        <div class="mt-3 label text-[color:var(--ink-soft)]">Per session</div>
+      </div>
+      <div>
+        <div class="display text-5xl md:text-6xl display-italic text-[color:var(--terracotta)]">no</div>
+        <div class="mt-3 label text-[color:var(--ink-soft)]">Membership required</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====  ABOUT — editorial feature  ===== -->
+<section id="about" class="bg-[color:var(--paper)] border-y border-[color:var(--ink)]/10 py-20 md:py-32">
+  <div class="max-w-[1500px] mx-auto px-5 md:px-10">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16">
+      <!-- Marginalia column -->
+      <aside class="md:col-span-3 reveal">
+        <div class="sticky top-32">
+          <div class="flex items-center gap-2 label text-[color:var(--ink-soft)]">
+            <span class="bullet bullet-C" aria-hidden="true">C</span>
+            <span>Field guide · 01</span>
+          </div>
+          <p class="marginalia text-base md:text-lg mt-4 text-[color:var(--ink-soft)] leading-snug">
+            "We are a community of fitness professionals — for everyone, regardless of body type, experience or goals."
+          </p>
+          <div class="mt-3 label text-[color:var(--ink-soft)]/70">— from the studio</div>
+        </div>
+      </aside>
+
+      <!-- Body -->
+      <div class="md:col-span-9 reveal">
+        <div class="label text-[color:var(--ink-soft)] mb-4">The studio</div>
+        <h2 class="display text-5xl md:text-7xl lg:text-[7rem] tracking-[-0.025em] max-w-4xl">
+          A small studio<br>
+          built deliberately<br>
+          <span class="display-italic text-[color:var(--terracotta)]">unlike a gym.</span>
+        </h2>
+
+        <div class="mt-10 md:mt-14 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-5xl text-base md:text-lg leading-relaxed text-[color:var(--ink-soft)]">
+          <p>
+            We developed Training &amp; Discipline for the client who desires an upscale training experience in a boutique space — away from the distractions and hustle of large gyms. Charcoal walls, a disco ball over the squat rack, glass garage doors that open onto Tahquitz Canyon Way, a bamboo-floored yoga room.
+          </p>
+          <p>
+            Every workout is safe, challenging, and fun — every time. <span class="text-[color:var(--ink)]">Exercise "buddies" are not certified personal trainers. There — we said it.</span> Our team has decades of experience across corporate fitness, academic and sports coaching, and healing modalities.
+          </p>
+        </div>
+
+        <!-- Inline image -->
+        <figure class="mt-12 md:mt-16">
+          <img src="images/studio-disco.jpg" alt="The studio's disco ball over a Rogue power rack against charcoal walls." loading="lazy" class="photo-warm w-full h-auto block" style="aspect-ratio: 16/9; object-fit: cover;">
+          <figcaption class="mt-3 flex items-baseline gap-3 text-sm">
+            <span class="display-italic">The signature view.</span>
+            <span class="flex-1 h-px bg-[color:var(--ink)]/15 self-center"></span>
+            <span class="label text-[color:var(--ink-soft)]">N° 02</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====  PROGRAMS — quiet editorial list  ===== -->
+<section id="programs" class="py-20 md:py-32">
+  <div class="max-w-[1500px] mx-auto px-5 md:px-10">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 mb-12 md:mb-20">
+      <div class="md:col-span-4">
+        <div class="label text-[color:var(--ink-soft)] mb-4">Programs &amp; services</div>
+        <h2 class="display text-5xl md:text-6xl lg:text-7xl">
+          What you<br>
+          <span class="display-italic text-[color:var(--terracotta)]">can train for.</span>
+        </h2>
+      </div>
+      <div class="md:col-span-7 md:col-start-6 self-end">
+        <p class="text-lg md:text-xl leading-relaxed text-[color:var(--ink-soft)] max-w-xl">
+          Every plan is custom-built for your wellness needs and documented at every visit, so progress is clear at a glance. We work with bodies new to training and bodies recovering from injury alike.
+        </p>
+      </div>
+    </div>
+
+    <!-- Programs as lettered editorial list -->
+    <ol class="border-t border-[color:var(--ink)]/15">
+
+      <li class="border-b border-[color:var(--ink)]/15 py-8 md:py-12 grid grid-cols-12 gap-4 md:gap-8 items-baseline reveal group hover:bg-[color:var(--ink)]/[0.015] transition-colors">
+        <div class="col-span-2 md:col-span-1 display text-2xl md:text-4xl text-[color:var(--ink-soft)]/50">01</div>
+        <div class="col-span-10 md:col-span-4">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="bullet bullet-T" aria-hidden="true">T</span>
+            <span class="label text-[color:var(--ink-soft)]">Strength</span>
+          </div>
+          <h3 class="display text-3xl md:text-4xl lg:text-5xl group-hover:text-[color:var(--terracotta)] transition-colors">Strength training, beginner to elite.</h3>
+        </div>
+        <div class="col-span-12 md:col-span-7 text-base md:text-lg leading-relaxed text-[color:var(--ink-soft)]">
+          Programmed by a CSCS and an ACE-CES. From a first deadlift to your strongest year. Plans are written down so you (and your trainer) can see what's working.
+        </div>
+      </li>
+
+      <li class="border-b border-[color:var(--ink)]/15 py-8 md:py-12 grid grid-cols-12 gap-4 md:gap-8 items-baseline reveal group hover:bg-[color:var(--ink)]/[0.015] transition-colors">
+        <div class="col-span-2 md:col-span-1 display text-2xl md:text-4xl text-[color:var(--ink-soft)]/50">02</div>
+        <div class="col-span-10 md:col-span-4">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="bullet bullet-D" aria-hidden="true">D</span>
+            <span class="label text-[color:var(--ink-soft)]">Body composition</span>
+          </div>
+          <h3 class="display text-3xl md:text-4xl lg:text-5xl group-hover:text-[color:var(--terracotta)] transition-colors">Weight loss <span class="display-italic">— that lasts.</span></h3>
+        </div>
+        <div class="col-span-12 md:col-span-7 text-base md:text-lg leading-relaxed text-[color:var(--ink-soft)]">
+          A sustainable plan written for your life — not a 30-day reset. We build it around what you actually like doing, with realistic milestones.
+        </div>
+      </li>
+
+      <li class="border-b border-[color:var(--ink)]/15 py-8 md:py-12 grid grid-cols-12 gap-4 md:gap-8 items-baseline reveal group hover:bg-[color:var(--ink)]/[0.015] transition-colors">
+        <div class="col-span-2 md:col-span-1 display text-2xl md:text-4xl text-[color:var(--ink-soft)]/50">03</div>
+        <div class="col-span-10 md:col-span-4">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="bullet bullet-C" aria-hidden="true">C</span>
+            <span class="label text-[color:var(--ink-soft)]">Mobility</span>
+          </div>
+          <h3 class="display text-3xl md:text-4xl lg:text-5xl group-hover:text-[color:var(--terracotta)] transition-colors">Stretching &amp; flexibility.</h3>
+        </div>
+        <div class="col-span-12 md:col-span-7 text-base md:text-lg leading-relaxed text-[color:var(--ink-soft)]">
+          A dedicated 30-, 45-, or 60-minute session — not a 60-second warm-up. Useful for the desk-bound, the runners, and the recently-90.
+        </div>
+      </li>
+
+      <li class="border-b border-[color:var(--ink)]/15 py-8 md:py-12 grid grid-cols-12 gap-4 md:gap-8 items-baseline reveal group hover:bg-[color:var(--ink)]/[0.015] transition-colors">
+        <div class="col-span-2 md:col-span-1 display text-2xl md:text-4xl text-[color:var(--ink-soft)]/50">04</div>
+        <div class="col-span-10 md:col-span-4">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="bullet bullet-S" aria-hidden="true">S</span>
+            <span class="label text-[color:var(--ink-soft)]">Yoga</span>
+          </div>
+          <h3 class="display text-3xl md:text-4xl lg:text-5xl group-hover:text-[color:var(--terracotta)] transition-colors">Individualized yoga instruction.</h3>
+        </div>
+        <div class="col-span-12 md:col-span-7 text-base md:text-lg leading-relaxed text-[color:var(--ink-soft)]">
+          1-on-1 with a 500-hr E-RYT and Yoga Therapy specialist. In our bamboo-floored room with the Buddha screen — not a Zoom box.
+        </div>
+      </li>
+
+      <li class="border-b border-[color:var(--ink)]/15 py-8 md:py-12 grid grid-cols-12 gap-4 md:gap-8 items-baseline reveal group hover:bg-[color:var(--ink)]/[0.015] transition-colors">
+        <div class="col-span-2 md:col-span-1 display text-2xl md:text-4xl text-[color:var(--ink-soft)]/50">05</div>
+        <div class="col-span-10 md:col-span-4">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="bullet bullet-P" aria-hidden="true">P</span>
+            <span class="label text-[color:var(--ink-soft)]">Medical-condition support</span>
+          </div>
+          <h3 class="display text-3xl md:text-4xl lg:text-5xl group-hover:text-[color:var(--terracotta)] transition-colors">Programs that work <span class="display-italic">with your doctor.</span></h3>
+        </div>
+        <div class="col-span-12 md:col-span-7 text-base md:text-lg leading-relaxed text-[color:var(--ink-soft)]">
+          Completed your cardiac rehab, chiropractic care, physical therapy, recent joint replacement with your doctor or therapist? Have a neurological condition that needs support? We can develop exercise programs that may help you manage your condition and improve your well-being.
+        </div>
+      </li>
+
+    </ol>
+  </div>
+</section>
+
+<!-- =====  TRAINERS — magazine portrait spread  ===== -->
+<section id="trainers" class="bg-[color:var(--ink)] text-[color:var(--sand)] py-20 md:py-32 sand-grain">
+  <div class="max-w-[1500px] mx-auto px-5 md:px-10">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 mb-12 md:mb-20">
+      <div class="md:col-span-5">
+        <div class="label text-[color:var(--sand)]/60 mb-4">Meet the team</div>
+        <h2 class="display text-5xl md:text-7xl lg:text-[6rem]">
+          Four trainers.<br>
+          <span class="display-italic text-[color:var(--mta-yellow)]">Decades</span> of training.
+        </h2>
+      </div>
+      <div class="md:col-span-6 md:col-start-7 self-end">
+        <p class="text-lg md:text-xl leading-relaxed text-[color:var(--sand)]/85 max-w-xl">
+          Brian recruits trainers who deliver safe, effective, and fun workouts every visit. The team brings credentials from NSCA, ACE, NCSF, Yoga Alliance — and experience from Equinox, UCR, UCLA, WIU, and 24 Hour Fitness.
+        </p>
+      </div>
+    </div>
+
+    <!-- Trainer alternating editorial blocks -->
+    <div class="space-y-20 md:space-y-32">
+
+      <!-- Brian -->
+      <article class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center reveal">
+        <figure class="md:col-span-5">
+          <img src="images/brian.jpg" alt="Brian Guzman, owner and ACE-certified personal trainer." loading="lazy" class="photo-mute w-full h-auto block" style="aspect-ratio: 3/4; object-fit: cover;">
+        </figure>
+        <div class="md:col-span-7">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="bullet bullet-T" aria-hidden="true">T</span>
+            <div class="label text-[color:var(--sand)]/60">Owner · 35 years · ACE-CPT, ACE-CES</div>
+          </div>
+          <h3 class="display text-4xl md:text-6xl lg:text-7xl">Brian <span class="display-italic">Guzman.</span></h3>
+          <p class="mt-6 text-base md:text-lg leading-relaxed text-[color:var(--sand)]/85 max-w-2xl">
+            Brian is certified by the American Council on Exercise as a Personal Trainer and Corrective Exercise Specialist. His career has spanned 35 years — General Manager, Fitness Manager, Master Trainer, Group Exercise Instructor. He has developed exercise programming for large gym chains and private facilities, and mentored hundreds of trainers. <span class="text-[color:var(--sand)]">As the owner of Training &amp; Discipline, his mission is simple: recruit exceptional trainers and coaches who deliver safe, effective, fun workouts every single visit.</span>
+          </p>
+        </div>
+      </article>
+
+      <!-- Patrick -->
+      <article class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center reveal">
+        <figure class="md:col-span-5 md:col-start-8 md:order-2">
+          <img src="images/patrick.jpg" alt="Patrick Lauderdale, NSCA-CSCS Strength and Conditioning Specialist." loading="lazy" class="photo-mute w-full h-auto block" style="aspect-ratio: 3/4; object-fit: cover;">
+        </figure>
+        <div class="md:col-span-7 md:order-1">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="bullet bullet-D" aria-hidden="true">D</span>
+            <div class="label text-[color:var(--sand)]/60">CSCS · M.S. Strength &amp; Sport Psychology · 20 years</div>
+          </div>
+          <h3 class="display text-4xl md:text-6xl lg:text-7xl">Patrick <span class="display-italic">Lauderdale.</span></h3>
+          <p class="mt-6 text-base md:text-lg leading-relaxed text-[color:var(--sand)]/85 max-w-2xl">
+            Patrick is a Certified Strength and Conditioning Specialist with the NSCA. Two undergraduate degrees in Exercise Science and Pedagogy from CSUSB, then a Master's in Strength &amp; Conditioning and Sport Psychology from Western Illinois University. <span class="text-[color:var(--sand)]">Twenty years in the field</span> — including collegiate strength coaching at UCR, UCLA, and WIU across sports from waterpolo to basketball. Patrick believes it isn't just his job to write the program — it's to help you understand the science behind it.
+          </p>
+        </div>
+      </article>
+
+      <!-- Zac -->
+      <article class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center reveal">
+        <figure class="md:col-span-5">
+          <img src="images/zac.jpg" alt="Zac Armstrong, NCSF-CPT and 500-hour Yoga Alliance E-RYT." loading="lazy" class="photo-mute w-full h-auto block" style="aspect-ratio: 3/4; object-fit: cover;">
+        </figure>
+        <div class="md:col-span-7">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="flex items-center gap-1.5">
+              <span class="bullet bullet-C" aria-hidden="true">C</span>
+              <span class="bullet bullet-S" aria-hidden="true">S</span>
+            </div>
+            <div class="label text-[color:var(--sand)]/60">NCSF-CPT · 500-hr E-RYT · Yoga Therapy · Decade-plus</div>
+          </div>
+          <h3 class="display text-4xl md:text-6xl lg:text-7xl">Zac <span class="display-italic">Armstrong.</span></h3>
+          <p class="mt-6 text-base md:text-lg leading-relaxed text-[color:var(--sand)]/85 max-w-2xl">
+            Zac is a Certified Personal Trainer with the National Council of Strength and Fitness, with a collegiate background in Exercise Science and Sport Nutrition. He stands as a 500-hour E-RYT and YACEP with Yoga Alliance, with an additional 300 hours of advanced Yoga Therapy training. <span class="text-[color:var(--sand)]">Over a decade in the fitness realm</span> — strength, yoga, programming, and mentoring fellow professionals.
+          </p>
+        </div>
+      </article>
+
+      <!-- Emma -->
+      <article class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center reveal">
+        <figure class="md:col-span-5 md:col-start-8 md:order-2">
+          <img src="images/emma.jpg" alt="Emma Middlebrook, NSCA-CPT, ACE Health and Wellness, and former top trainer at Equinox Fitness." loading="lazy" class="photo-mute w-full h-auto block" style="aspect-ratio: 3/4; object-fit: cover;">
+        </figure>
+        <div class="md:col-span-7 md:order-1">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="flex items-center gap-1.5">
+              <span class="bullet bullet-P" aria-hidden="true">P</span>
+              <span class="bullet bullet-Y" aria-hidden="true">S</span>
+            </div>
+            <div class="label text-[color:var(--sand)]/60">NSCA-CPT · ACE Health &amp; Wellness · 25 years · Equinox alum</div>
+          </div>
+          <h3 class="display text-4xl md:text-6xl lg:text-7xl">Emma <span class="display-italic">Middlebrook.</span></h3>
+          <p class="mt-6 text-base md:text-lg leading-relaxed text-[color:var(--sand)]/85 max-w-2xl">
+            Emma has close to 25 years in health and fitness. She runs a small group fitness studio in Portland, OR, and has made Palm Springs home for the desert side of her practice. <span class="text-[color:var(--sand)]">She especially loves supporting members of the LGBTQA+ family.</span> A former top trainer at Equinox Fitness with NSCA-CPT and ACE Health &amp; Wellness certifications, a BS in Psychology and an Associates in Occupational Therapy. Her specialty: comprehensive workout/lifestyle programs that are scientifically based and tailored exclusively for you.
+          </p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- =====  TESTIMONIAL — pull-quote spread  ===== -->
+<section id="testimonials" class="py-20 md:py-32">
+  <div class="max-w-4xl mx-auto px-5 md:px-10">
+    <div class="label text-[color:var(--ink-soft)] mb-8 flex items-center gap-3">
+      <span class="bullet bullet-Y" aria-hidden="true">S</span>
+      <span>Field reports · from the floor</span>
+    </div>
+
+    <blockquote class="display text-3xl md:text-5xl lg:text-[3.5rem] leading-[1.05] text-[color:var(--ink)]">
+      <span aria-hidden="true" class="display-italic text-[color:var(--terracotta)] block text-[0.65em] mb-3">"</span>
+      I've been training with my trainer for two years and she is conscientious about proper form and making sure I have a full and effective workout each time. She is excellent at working around my injuries but still making sure she challenges the muscle groups around the area without causing damage.
+      <span aria-hidden="true" class="display-italic text-[color:var(--terracotta)] block text-[0.65em] mt-1">"</span>
+    </blockquote>
+
+    <div class="mt-10 flex items-center gap-4">
+      <span class="block w-12 h-px bg-[color:var(--ink)]/40"></span>
+      <div>
+        <div class="font-medium text-base">J. Heersink</div>
+        <div class="label text-[color:var(--ink-soft)] mt-1">Two-year client · 5★</div>
+      </div>
+    </div>
+
+    <!-- Secondary quote -->
+    <div class="mt-16 md:mt-20 pt-10 border-t border-[color:var(--ink)]/15 grid grid-cols-1 md:grid-cols-12 gap-6">
+      <div class="md:col-span-3">
+        <div class="label text-[color:var(--ink-soft)]">Field report · 02</div>
+      </div>
+      <div class="md:col-span-9">
+        <p class="display text-2xl md:text-3xl leading-snug">
+          "I have been training with Zac at Training and Discipline for the past ten months <span class="display-italic text-[color:var(--terracotta)]">— amazing.</span>"
+        </p>
+        <div class="mt-4 label text-[color:var(--ink-soft)]">— T. Kramer · 10 months</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====  PRICING — quiet table  ===== -->
+<section id="pricing" class="bg-[color:var(--paper)] border-y border-[color:var(--ink)]/10 py-20 md:py-32">
+  <div class="max-w-[1500px] mx-auto px-5 md:px-10">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 mb-12 md:mb-16">
+      <div class="md:col-span-5">
+        <div class="label text-[color:var(--ink-soft)] mb-4">Sessions</div>
+        <h2 class="display text-5xl md:text-7xl">
+          Pay per<br>
+          <span class="display-italic text-[color:var(--terracotta)]">session.</span>
+        </h2>
+        <p class="mt-6 text-lg leading-relaxed text-[color:var(--ink-soft)] max-w-md">
+          No membership. No initiation. New clients start with a complimentary consultation — meet your trainer, share your goals, walk the floor.
+        </p>
+      </div>
+
+      <!-- Complimentary consult card -->
+      <div class="md:col-span-7 md:col-start-7 flex items-stretch reveal">
+        <div class="w-full bg-[color:var(--terracotta)] text-[color:var(--paper)] p-7 md:p-10 flex flex-col justify-between gap-8 disco-glow relative overflow-hidden">
+          <div>
+            <div class="label text-[color:var(--paper)]/80">New client · No-cost</div>
+            <h3 class="display text-4xl md:text-5xl lg:text-6xl mt-3">First consultation, <span class="display-italic">on us.</span></h3>
+          </div>
+          <a href="https://www.vagaro.com/traininganddiscipline" target="_blank" rel="noopener" class="self-start inline-flex items-center gap-3 bg-[color:var(--paper)] text-[color:var(--ink)] px-6 py-3.5 label hover:bg-[color:var(--mta-yellow)] transition-colors">
+            Book your consult
+            <svg width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 12L12 2M12 2H4M12 2V10" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Per-session table -->
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16">
+      <div class="md:col-span-7">
+        <div class="label text-[color:var(--ink-soft)] mb-5">Per-session rates</div>
+        <ul class="border-y border-[color:var(--ink)]/15">
+          <li class="flex items-baseline justify-between py-6 border-b border-[color:var(--ink)]/10 last:border-b-0">
+            <span class="display text-2xl md:text-3xl">30 minutes</span>
+            <span class="price-num text-3xl md:text-4xl">$50</span>
+          </li>
+          <li class="flex items-baseline justify-between py-6 border-b border-[color:var(--ink)]/10 last:border-b-0">
+            <span class="display text-2xl md:text-3xl">45 minutes</span>
+            <span class="price-num text-3xl md:text-4xl">$75</span>
+          </li>
+          <li class="flex items-baseline justify-between py-6">
+            <span class="display text-2xl md:text-3xl">60 minutes</span>
+            <span class="price-num text-3xl md:text-4xl">$100</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Packs -->
+      <div class="md:col-span-5">
+        <div class="label text-[color:var(--ink-soft)] mb-5">Session packs · save up to $200</div>
+        <div class="space-y-3">
+          <div class="flex items-baseline justify-between py-3 border-b border-[color:var(--ink)]/15">
+            <span class="text-base md:text-lg">10-pack · 30 min</span>
+            <span class="price-num text-xl md:text-2xl">$450</span>
+          </div>
+          <div class="flex items-baseline justify-between py-3 border-b border-[color:var(--ink)]/15">
+            <span class="text-base md:text-lg">20-pack · 30 min</span>
+            <span class="price-num text-xl md:text-2xl">$900</span>
+          </div>
+          <div class="flex items-baseline justify-between py-3 border-b border-[color:var(--ink)]/15">
+            <span class="text-base md:text-lg">10-pack · 45 min</span>
+            <span class="price-num text-xl md:text-2xl">$675</span>
+          </div>
+          <div class="flex items-baseline justify-between py-3 border-b border-[color:var(--ink)]/15">
+            <span class="text-base md:text-lg">20-pack · 45 min</span>
+            <span class="price-num text-xl md:text-2xl">$1,350</span>
+          </div>
+          <div class="flex items-baseline justify-between py-3 border-b border-[color:var(--ink)]/15">
+            <span class="text-base md:text-lg">10-pack · 60 min</span>
+            <span class="price-num text-xl md:text-2xl">$900</span>
+          </div>
+          <div class="flex items-baseline justify-between py-3">
+            <span class="text-base md:text-lg">20-pack · 60 min</span>
+            <span class="price-num text-xl md:text-2xl">$1,800</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bring the studio to you -->
+    <div class="mt-16 md:mt-24 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-center reveal">
+      <figure class="md:col-span-5">
+        <img src="images/studio-yoga.jpg" alt="The bamboo-floored yoga room with a Buddha screen and green Thai meditation cushions." loading="lazy" class="photo-warm w-full h-auto block" style="aspect-ratio: 4/5; object-fit: cover;">
+      </figure>
+      <div class="md:col-span-7">
+        <div class="label text-[color:var(--ink-soft)] mb-3 flex items-center gap-2">
+          <span class="bullet bullet-P" aria-hidden="true">P</span>
+          <span>Off-site service</span>
+        </div>
+        <h3 class="display text-4xl md:text-5xl lg:text-6xl">
+          Bring the studio<br>
+          <span class="display-italic text-[color:var(--terracotta)]">to you.</span>
+        </h3>
+        <p class="mt-6 text-base md:text-lg leading-relaxed text-[color:var(--ink-soft)] max-w-xl">
+          For clients who travel, keep seasonal homes, or live busy. An initial consultation, four customized monthly workouts with form-clip videos, and accountability from your trainer.
+        </p>
+        <div class="mt-8 flex items-baseline gap-4">
+          <span class="price-num text-4xl md:text-5xl">$100</span>
+          <span class="label text-[color:var(--ink-soft)]">/ billed every 4 weeks</span>
+        </div>
+        <a href="https://www.vagaro.com/traininganddiscipline" target="_blank" rel="noopener" class="inline-flex mt-7 items-center gap-3 bg-[color:var(--ink)] text-[color:var(--paper)] px-6 py-3.5 label hover:bg-[color:var(--terracotta)] transition-colors">
+          Start your remote program
+          <svg width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 12L12 2M12 2H4M12 2V10" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====  GALLERY — masonry studio tour  ===== -->
+<section id="tour" class="py-20 md:py-32">
+  <div class="max-w-[1500px] mx-auto px-5 md:px-10">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 mb-12 md:mb-16">
+      <div class="md:col-span-5">
+        <div class="label text-[color:var(--ink-soft)] mb-4">Inside</div>
+        <h2 class="display text-5xl md:text-7xl">
+          A studio<br>
+          <span class="display-italic text-[color:var(--terracotta)]">that feels like</span><br>
+          Palm Springs.
+        </h2>
+      </div>
+      <div class="md:col-span-6 md:col-start-7 self-end">
+        <p class="text-base md:text-lg leading-relaxed text-[color:var(--ink-soft)] max-w-xl">
+          Charcoal walls. A disco ball over the squat rack. Yellow velvet armchairs in the lounge. A bamboo-floored yoga room with a Buddha screen. Glass garage doors that open onto the San Jacintos. We don't try to look like a gym — and we don't apologize for it.
+        </p>
+      </div>
+    </div>
+
+    <div class="columns-1 md:columns-2 lg:columns-3 gap-4 md:gap-6 [column-fill:_balance]">
+      <figure class="break-inside-avoid mb-4 md:mb-6 reveal">
+        <img src="images/studio-disco.jpg" alt="The disco ball above a Rogue power rack against charcoal walls." loading="lazy" class="photo-warm w-full h-auto block">
+      </figure>
+      <figure class="break-inside-avoid mb-4 md:mb-6 reveal">
+        <img src="images/studio-doors-open.jpg" alt="Glass garage doors fully open to palms and mountains beyond a power rack." loading="lazy" class="photo-warm w-full h-auto block">
+      </figure>
+      <figure class="break-inside-avoid mb-4 md:mb-6 reveal">
+        <img src="images/studio-lounge.jpg" alt="Yellow velvet armchairs in the studio lounge with Palm Springs bodybuilder pop-art posters." loading="lazy" class="photo-warm w-full h-auto block">
+      </figure>
+      <figure class="break-inside-avoid mb-4 md:mb-6 reveal">
+        <img src="images/studio-yoga.jpg" alt="The bamboo-floored yoga room with Buddha screen and green Thai meditation cushions." loading="lazy" class="photo-warm w-full h-auto block">
+      </figure>
+      <figure class="break-inside-avoid mb-4 md:mb-6 reveal">
+        <img src="images/studio-floor.jpg" alt="Wide view of the studio floor with cable machines, Smith machine, and free weights." loading="lazy" class="photo-warm w-full h-auto block">
+      </figure>
+      <figure class="break-inside-avoid mb-4 md:mb-6 reveal">
+        <img src="images/studio-bench.jpg" alt="Free-weight bench area with the subway-door wall mural carrying the Training and Discipline TDCSPS sign." loading="lazy" class="photo-warm w-full h-auto block">
+      </figure>
+      <figure class="break-inside-avoid mb-4 md:mb-6 reveal">
+        <img src="images/studio-rogue.jpg" alt="Wide view showing the disco ball, Rogue rack, Inspire cable column and exterior windows." loading="lazy" class="photo-warm w-full h-auto block">
+      </figure>
+      <figure class="break-inside-avoid mb-4 md:mb-6 reveal">
+        <img src="images/studio-dumbbells.jpg" alt="Close-up of the dumbbell rack with palm trees and planted hedge through the window beyond." loading="lazy" class="photo-warm w-full h-auto block">
+      </figure>
+      <figure class="break-inside-avoid mb-4 md:mb-6 reveal">
+        <img src="images/studio-ripbar.jpg" alt="Blue RipBar suspension straps hanging from a cable column for functional training." loading="lazy" class="photo-warm w-full h-auto block">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- =====  VISIT  ===== -->
+<section id="visit" class="bg-[color:var(--ink)] text-[color:var(--sand)] py-20 md:py-32">
+  <div class="max-w-[1500px] mx-auto px-5 md:px-10">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16">
+      <!-- Visit info -->
+      <div class="md:col-span-7">
+        <div class="label text-[color:var(--sand)]/60 mb-4">Visit</div>
+        <h2 class="display text-5xl md:text-7xl lg:text-[6.5rem]">
+          Pull up.<br>
+          <span class="display-italic text-[color:var(--mta-yellow)]">By appointment.</span>
+        </h2>
+        <p class="mt-7 text-lg md:text-xl leading-relaxed text-[color:var(--sand)]/85 max-w-xl">
+          We're in downtown Palm Springs, just off the corner of Tahquitz and Calle Encilia. Booking is online or by phone — both go straight to a real trainer's calendar.
+        </p>
+
+        <div class="mt-12 md:mt-14 grid grid-cols-2 gap-y-8 gap-x-6 max-w-xl">
+          <div>
+            <div class="label text-[color:var(--sand)]/60 mb-2">Studio</div>
+            <div class="display text-xl md:text-2xl leading-tight">707 East Tahquitz<br>Canyon Way</div>
+            <div class="display text-xl md:text-2xl leading-tight">Suite 1, Palm Springs<br>California 92262</div>
+          </div>
+          <div>
+            <div class="label text-[color:var(--sand)]/60 mb-2">Hours</div>
+            <div class="display text-xl md:text-2xl">By appointment</div>
+            <div class="mt-6 label text-[color:var(--sand)]/60 mb-2">Phone</div>
+            <a href="tel:+17609044111" class="display text-xl md:text-2xl hover:text-[color:var(--mta-yellow)] transition-colors block">760·904·4111</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Booking card -->
+      <div class="md:col-span-5 flex flex-col gap-6">
+        <div class="bg-[color:var(--mta-yellow)] text-[color:var(--ink)] p-8 md:p-10">
+          <div class="label">Book online · Vagaro</div>
+          <h3 class="display text-3xl md:text-4xl lg:text-5xl mt-3">Pick a trainer.<br><span class="display-italic">Pick a time.</span></h3>
+          <p class="mt-5 text-base">All scheduling runs through Vagaro. New clients start with the complimentary consult.</p>
+          <a href="https://www.vagaro.com/traininganddiscipline" target="_blank" rel="noopener" class="inline-flex mt-7 items-center gap-3 bg-[color:var(--ink)] text-[color:var(--mta-yellow)] px-6 py-3.5 label hover:bg-[color:var(--terracotta)] hover:text-[color:var(--paper)] transition-colors">
+            Open the booking
+            <svg width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 12L12 2M12 2H4M12 2V10" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg>
+          </a>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 md:gap-6">
+          <a href="https://www.instagram.com/training.and.discipline/" target="_blank" rel="noopener" class="border border-[color:var(--sand)]/20 p-5 md:p-6 hover:bg-[color:var(--sand)]/5 transition-colors">
+            <div class="label text-[color:var(--sand)]/60">Instagram</div>
+            <div class="display text-lg md:text-xl mt-2">@training.and.discipline</div>
+          </a>
+          <a href="https://www.facebook.com/p/Training-Discipline-100067459311149/" target="_blank" rel="noopener" class="border border-[color:var(--sand)]/20 p-5 md:p-6 hover:bg-[color:var(--sand)]/5 transition-colors">
+            <div class="label text-[color:var(--sand)]/60">Facebook</div>
+            <div class="display text-lg md:text-xl mt-2">Training &amp; Discipline</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====  FOOTER  ===== -->
+<footer class="bg-[color:var(--sand)] text-[color:var(--ink)] py-14 md:py-20">
+  <div class="max-w-[1500px] mx-auto px-5 md:px-10">
+    <div class="display text-[16vw] md:text-[10vw] leading-[0.86] tracking-[-0.025em]">
+      Train <span class="display-italic text-[color:var(--terracotta)]">in the desert.</span>
+    </div>
+
+    <div class="mt-12 pt-8 border-t border-[color:var(--ink)]/15 grid grid-cols-2 md:grid-cols-4 gap-6 label text-[color:var(--ink-soft)]">
+      <div>
+        <div class="text-[color:var(--ink)]">Studio</div>
+        <a href="tel:+17609044111" class="block mt-2 hover:text-[color:var(--terracotta)] transition-colors">760·904·4111</a>
+        <div>By appointment</div>
+      </div>
+      <div>
+        <div class="text-[color:var(--ink)]">Find us</div>
+        <div class="mt-2">707 E Tahquitz Cyn Way</div>
+        <div>Suite 1, Palm Springs CA</div>
+      </div>
+      <div>
+        <div class="text-[color:var(--ink)]">Booking</div>
+        <a href="https://www.vagaro.com/traininganddiscipline" target="_blank" rel="noopener" class="block mt-2 hover:text-[color:var(--terracotta)] transition-colors">Vagaro · open 24/7</a>
+      </div>
+      <div>
+        <div class="text-[color:var(--ink)]">Follow</div>
+        <a href="https://www.instagram.com/training.and.discipline/" target="_blank" rel="noopener" class="block mt-2 hover:text-[color:var(--terracotta)] transition-colors">Instagram</a>
+        <a href="https://www.facebook.com/p/Training-Discipline-100067459311149/" target="_blank" rel="noopener" class="block hover:text-[color:var(--terracotta)] transition-colors">Facebook</a>
+      </div>
+    </div>
+
+    <div class="mt-8 pt-8 border-t border-[color:var(--ink)]/10 flex flex-wrap items-center justify-between gap-4 label text-[color:var(--ink-soft)]/70">
+      <div>© 2026 Training &amp; Discipline · All rights reserved</div>
+      <div>Direction B · Boutique Desert</div>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== Banana Bytes credit ===== -->
+<div style="text-align:center; padding:1.5rem 1rem; font-size:0.7rem; letter-spacing:0.05em; opacity:0.45; background:#F4ECE0; color:#14110D;">
+  <a href="https://instagram.com/BananaCares" target="_blank" rel="noopener" style="text-decoration:none; color:inherit;">
+    Mockup created by Banana Bytes
+  </a>
+</div>
+
+<!-- ===== Mobile floating book CTA ===== -->
+<a href="https://www.vagaro.com/traininganddiscipline" target="_blank" rel="noopener"
+   class="md:hidden fixed bottom-4 right-4 z-50 inline-flex items-center gap-2 bg-[color:var(--ink)] text-[color:var(--paper)] px-5 py-3 label" style="box-shadow: 0 8px 24px rgba(20,17,13,0.25);">
+  <span class="bullet bullet-T" aria-hidden="true">T</span>
+  Book
+</a>
+
+<script>
+  // IntersectionObserver reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('in'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
