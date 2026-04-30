@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Direction E · Selection · Training & Discipline</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0a0a0a">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --ink: #0a0a0a;
+    --paper: #fff;
+    --use: #FCCC0A;
+    --bench: #A626AA;
+    --kill: #EE352E;
+    --rule: rgba(255,255,255,0.12);
+  }
+  * { -webkit-font-smoothing: antialiased; }
+  html, body { background: var(--ink); color: #fff; font-family: 'Inter Tight', system-ui, sans-serif; }
+  .display { font-family: 'Archivo Black', sans-serif; letter-spacing: -0.025em; line-height: 0.9; }
+  .mono { font-family: 'JetBrains Mono', monospace; font-feature-settings: 'tnum'; }
+  .label { text-transform: uppercase; letter-spacing: 0.22em; font-size: 0.7rem; font-weight: 500; }
+
+  .tile { transition: transform 0.25s ease, box-shadow 0.25s ease; border: 2px solid var(--rule); }
+  .tile:hover { transform: translateY(-2px); }
+  .tile img { display: block; width: 100%; height: auto; aspect-ratio: 16/9; object-fit: cover; background: #111; }
+
+  .tile[data-state="use"] { border-color: var(--use); box-shadow: 0 0 0 4px rgba(252,204,10,0.15); }
+  .tile[data-state="bench"] { border-color: var(--bench); box-shadow: 0 0 0 4px rgba(166,38,170,0.18); }
+  .tile[data-state="kill"] { border-color: var(--kill); box-shadow: 0 0 0 4px rgba(238,53,46,0.18); opacity: 0.55; }
+  .tile[data-state="kill"] img { filter: grayscale(0.85) brightness(0.65); }
+
+  .badge { display: none; position: absolute; top: 12px; left: 12px; z-index: 2; padding: 6px 10px; background: #000; color: #fff; font-family: 'Archivo Black', sans-serif; letter-spacing: 0.16em; font-size: 11px; border: 2px solid currentColor; }
+  .tile[data-state="use"] .badge { display: inline-block; color: var(--use); }
+  .tile[data-state="bench"] .badge { display: inline-block; color: var(--bench); }
+  .tile[data-state="kill"] .badge { display: inline-block; color: var(--kill); }
+
+  .btn { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; padding: 10px 12px; border: 1px solid rgba(255,255,255,0.18); background: transparent; color: #fff; cursor: pointer; transition: all 0.2s ease; flex: 1; }
+  .btn:hover { background: rgba(255,255,255,0.06); }
+  .btn[data-active="true"][data-action="use"]    { background: var(--use); color: #000; border-color: var(--use); }
+  .btn[data-active="true"][data-action="bench"]  { background: var(--bench); color: #fff; border-color: var(--bench); }
+  .btn[data-active="true"][data-action="kill"]   { background: var(--kill); color: #fff; border-color: var(--kill); }
+
+  .filter-pill { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; padding: 8px 14px; border: 1px solid rgba(255,255,255,0.18); background: transparent; color: #fff; cursor: pointer; transition: all 0.18s ease; }
+  .filter-pill:hover { border-color: rgba(255,255,255,0.45); }
+  .filter-pill[data-active="true"] { background: #fff; color: #000; border-color: #fff; }
+
+  .footer-bar { position: sticky; bottom: 0; background: rgba(10,10,10,0.96); backdrop-filter: blur(16px); border-top: 1px solid var(--rule); }
+
+  .status-dot { width: 10px; height: 10px; border-radius: 9999px; display: inline-block; }
+  .dot-use { background: var(--use); }
+  .dot-bench { background: var(--bench); }
+  .dot-kill { background: var(--kill); }
+  .dot-untagged { background: rgba(255,255,255,0.25); }
+
+  ::selection { background: var(--use); color: #000; }
+
+  .tile.hidden-by-filter { display: none; }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="border-b border-white/10">
+  <div class="max-w-[1500px] mx-auto px-5 md:px-10 py-5 flex items-center justify-between gap-3 flex-wrap">
+    <div>
+      <div class="mono text-[10px] uppercase tracking-[0.22em] text-white/55">Direction E · Exploration · Selection</div>
+      <h1 class="display text-2xl md:text-3xl uppercase mt-2">Pick the keepers.</h1>
+    </div>
+    <div class="mono text-[10px] uppercase tracking-[0.18em] text-white/55">23 assets · click to tag · keys 1·2·3</div>
+  </div>
+</header>
+
+<!-- Legend -->
+<section class="border-b border-white/10 py-5">
+  <div class="max-w-[1500px] mx-auto px-5 md:px-10 flex flex-wrap items-center gap-x-6 gap-y-3">
+    <div class="flex items-center gap-2 mono text-[10px] uppercase tracking-[0.18em] text-white/70">
+      <span class="status-dot dot-use"></span> Use — goes in the build
+    </div>
+    <div class="flex items-center gap-2 mono text-[10px] uppercase tracking-[0.18em] text-white/70">
+      <span class="status-dot dot-bench"></span> Bench — keep, may use
+    </div>
+    <div class="flex items-center gap-2 mono text-[10px] uppercase tracking-[0.18em] text-white/70">
+      <span class="status-dot dot-kill"></span> Kill — drop it
+    </div>
+    <div class="flex items-center gap-2 mono text-[10px] uppercase tracking-[0.18em] text-white/40">
+      <span class="status-dot dot-untagged"></span> Untagged
+    </div>
+  </div>
+</section>
+
+<!-- Filters -->
+<section class="border-b border-white/10 py-4">
+  <div class="max-w-[1500px] mx-auto px-5 md:px-10 flex flex-wrap items-center gap-2">
+    <span class="mono text-[10px] uppercase tracking-[0.22em] text-white/45 mr-2">Category:</span>
+    <button class="filter-pill" data-filter="all" data-active="true">All</button>
+    <button class="filter-pill" data-filter="hero">Hero</button>
+    <button class="filter-pill" data-filter="brand">Brand · subway</button>
+    <button class="filter-pill" data-filter="detail">Editorial detail</button>
+    <button class="filter-pill" data-filter="body">Body · motion</button>
+    <button class="filter-pill" data-filter="atmosphere">Atmosphere</button>
+    <span class="mono text-[10px] uppercase tracking-[0.22em] text-white/45 ml-4 mr-2">Status:</span>
+    <button class="filter-pill" data-status="all" data-active="true">All</button>
+    <button class="filter-pill" data-status="untagged">Untagged</button>
+    <button class="filter-pill" data-status="use">Use</button>
+    <button class="filter-pill" data-status="bench">Bench</button>
+    <button class="filter-pill" data-status="kill">Kill</button>
+  </div>
+</section>
+
+<!-- Grid -->
+<section class="py-8 md:py-10">
+  <div class="max-w-[1500px] mx-auto px-5 md:px-10">
+    <div id="grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6"></div>
+  </div>
+</section>
+
+<!-- Action bar -->
+<div class="footer-bar py-4 md:py-5">
+  <div class="max-w-[1500px] mx-auto px-5 md:px-10 flex items-center justify-between gap-4 flex-wrap">
+    <div class="mono text-[10px] uppercase tracking-[0.18em] text-white/70 flex items-center gap-4 flex-wrap">
+      <span><span class="status-dot dot-use mr-2"></span>Use <span id="count-use" class="text-white">0</span></span>
+      <span><span class="status-dot dot-bench mr-2"></span>Bench <span id="count-bench" class="text-white">0</span></span>
+      <span><span class="status-dot dot-kill mr-2"></span>Kill <span id="count-kill" class="text-white">0</span></span>
+      <span><span class="status-dot dot-untagged mr-2"></span>Untagged <span id="count-untagged" class="text-white">22</span></span>
+    </div>
+    <div class="flex items-center gap-2 flex-wrap">
+      <button id="copy-btn" class="filter-pill">Copy selections</button>
+      <button id="reset-btn" class="filter-pill">Reset all</button>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div id="toast" class="fixed left-1/2 bottom-24 -translate-x-1/2 bg-white text-black px-4 py-2 mono text-[11px] uppercase tracking-[0.18em] opacity-0 transition-opacity duration-300 pointer-events-none z-50">Copied</div>
+
+<!-- Banana Bytes credit -->
+<div style="text-align:center; padding:1.5rem 1rem; font-size:0.7rem; letter-spacing:0.05em; opacity:0.45; background:#000; color:#fff; border-top: 1px solid rgba(255,255,255,0.08);">
+  <a href="https://instagram.com/BananaCares" target="_blank" rel="noopener" style="text-decoration:none; color:inherit;">
+    Mockup created by Banana Bytes
+  </a>
+</div>
+
+<script>
+  const ASSETS = [
+    { id: '01', file: '01-deadlift-hands.jpg',                title: 'Deadlift hands',                  cat: 'hero',       myPick: 'use',  notes: 'Visceral expert-hands-at-work, anonymous bodies, single overhead spot. Hero contender.' },
+    { id: '02', file: '02-chalked-hands-bar.jpg',             title: 'Chalked hands on bar',            cat: 'detail',     myPick: 'use',  notes: 'Macro chalk dust register. Section breaker gold.' },
+    { id: '03', file: '03-route-intersection-print.jpg',      title: 'Route intersection print',         cat: 'brand',      myPick: 'use',  notes: 'Clean Vignelli museum poster. TDCSPS palette intact.' },
+    { id: '04', file: '04-empty-rack-spotlight.jpg',          title: 'Empty rack spotlight',             cat: 'hero',       myPick: 'use',  notes: 'Monastic restraint. The empty room is the product.' },
+    { id: '05', file: '05-kettlebell-motion.jpg',             title: 'Kettlebell motion blur',           cat: 'body',       myPick: 'kill', notes: 'Reads more "fitness ad" than Equinox. Body too visible / model-y.' },
+    { id: '06', file: '06-side-plank-line.jpg',               title: 'Side-plank held line',             cat: 'body',       myPick: 'use',  notes: 'Body as architectural held line. Strong.' },
+    { id: '06b',file: '06-stretch-sculpture.jpg',             title: 'Stretch sculpture (rejected)',     cat: 'body',       myPick: 'kill', notes: '0 bytes — content-mod rejected on first attempt. Replaced by 06.' },
+    { id: '07', file: '07-subway-tile-texture.jpg',           title: 'Subway tile texture',              cat: 'atmosphere', myPick: 'kill', notes: 'Clean but feels like stock tile, not on-brief for editorial register.' },
+    { id: '08', file: '08-vintage-map-macro.jpg',             title: 'Vintage subway map macro',         cat: 'brand',      myPick: 'use',  notes: 'Aged paper, TDCSPS lines crossing at black nodes. Material warmth.' },
+    { id: '09', file: '09-plate-stack-still-life.jpg',        title: 'Plate stack still life',           cat: 'detail',     myPick: 'use',  notes: 'Sugimoto-grade restraint. Monumental still life.' },
+    { id: '10', file: '10-wrist-wrap-prep.jpg',               title: 'Wrist wrap (trainer-client)',      cat: 'detail',     myPick: 'use',  notes: 'Moment-of-care. Brand promise visualized.' },
+    { id: '11', file: '11-tunnel-vanishing-point.jpg',        title: 'Tunnel vanishing point',           cat: 'hero',       myPick: 'use',  notes: 'Symmetrical "follow the line" cinematic.' },
+    { id: '12', file: '12-station-sign-intersections.jpg',    title: 'INTERSECTIONS station sign',       cat: 'hero',       myPick: 'use',  notes: 'Gemini Pro nailed text. THE brand statement. Strongest piece in batch.' },
+    { id: '13', file: '13-posture-correction.jpg',            title: 'Posture correction',               cat: 'body',       myPick: 'bench',notes: 'Reads slightly intimate in second-hand placement. B-tier.' },
+    { id: '14', file: '14-ready-stance-shoes.jpg',            title: 'Ready-stance shoes',               cat: 'detail',     myPick: 'use',  notes: 'Low-angle athletic editorial.' },
+    { id: '15', file: '15-off-peak-platform.jpg',             title: 'Off-peak platform',                cat: 'hero',       myPick: 'use',  notes: 'Solitary figure, monumental empty corridor.' },
+    { id: '16', file: '16-trainer-presence.jpg',              title: 'Trainer presence on rack',         cat: 'body',       myPick: 'use',  notes: 'Patient expert presence. Anonymous face.' },
+    { id: '17', file: '17-floor-arrows-yellow.jpg',           title: 'Floor arrows + yellow',            cat: 'brand',      myPick: 'use',  notes: 'Intersections metaphor as floor signage. Single MTA accent.' },
+    { id: '18', file: '18-train-motion-blur.jpg',             title: 'Train motion blur',                cat: 'body',       myPick: 'use',  notes: 'Kinetic transit moment. Section transition art.' },
+    { id: '19', file: '19-painterly-intersections.jpg',       title: 'Painterly intersections',          cat: 'brand',      myPick: 'bench',notes: 'Twombly register. Loose. Could be section divider.' },
+    { id: '20', file: '20-chrome-pole-sculpture.jpg',         title: 'Chrome pole sculpture',            cat: 'atmosphere', myPick: 'bench',notes: 'Pared down to abstraction. Possible accent.' },
+    { id: '21', file: '21-yoga-mat-unfurl.jpg',               title: 'Yoga mat unfurl',                  cat: 'detail',     myPick: 'use',  notes: 'Care × stillness intersection.' },
+    { id: '22', file: '22-red-bullet-wall.jpg',               title: 'Red painted bullet on wall',       cat: 'brand',      myPick: 'use',  notes: 'Single statement brand asset. Donald Judd register.' }
+  ];
+
+  const STORAGE_KEY = 'direction-e-selection-v1';
+  let state = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+
+  // Default unset → my pick (so Zack starts with my recommendations and can override)
+  // We only seed if NO state exists yet
+  if (Object.keys(state).length === 0) {
+    ASSETS.forEach(a => state[a.id] = a.myPick);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  }
+
+  const grid = document.getElementById('grid');
+
+  function render() {
+    grid.innerHTML = ASSETS.map(a => {
+      const s = state[a.id] || '';
+      const myFlag = a.myPick && a.myPick === s ? `<span class="text-white/45">· my pick</span>` : '';
+      const myDiff = a.myPick && a.myPick !== s ? `<span class="text-white/45">· I picked ${a.myPick.toUpperCase()}</span>` : '';
+      return `
+        <article class="tile relative bg-[#0d0d0d]" data-id="${a.id}" data-state="${s}" data-cat="${a.cat}">
+          <span class="badge">${s ? s.toUpperCase() : ''}</span>
+          <a href="images/direction-e-explore/${a.file}" target="_blank" rel="noopener">
+            <img src="images/direction-e-explore/${a.file}" alt="${a.title}" loading="lazy">
+          </a>
+          <div class="p-4 md:p-5">
+            <div class="flex items-baseline gap-2 mono text-[10px] uppercase tracking-[0.18em] text-white/55">
+              <span class="text-white">#${a.id}</span>
+              <span aria-hidden="true">·</span>
+              <span>${a.cat}</span>
+              ${myFlag}${myDiff}
+            </div>
+            <h3 class="display uppercase text-base md:text-lg mt-2">${a.title}</h3>
+            <p class="mt-2 text-sm text-white/65 leading-snug">${a.notes}</p>
+            <div class="mt-4 flex gap-2">
+              <button class="btn" data-action="use"   data-id="${a.id}" data-active="${s==='use'}">Use</button>
+              <button class="btn" data-action="bench" data-id="${a.id}" data-active="${s==='bench'}">Bench</button>
+              <button class="btn" data-action="kill"  data-id="${a.id}" data-active="${s==='kill'}">Kill</button>
+            </div>
+          </div>
+        </article>
+      `;
+    }).join('');
+    updateCounts();
+    applyFilters();
+  }
+
+  function updateCounts() {
+    const counts = { use: 0, bench: 0, kill: 0, untagged: 0 };
+    ASSETS.forEach(a => {
+      const s = state[a.id];
+      if (s === 'use' || s === 'bench' || s === 'kill') counts[s]++;
+      else counts.untagged++;
+    });
+    document.getElementById('count-use').textContent = counts.use;
+    document.getElementById('count-bench').textContent = counts.bench;
+    document.getElementById('count-kill').textContent = counts.kill;
+    document.getElementById('count-untagged').textContent = counts.untagged;
+  }
+
+  let activeCat = 'all';
+  let activeStatus = 'all';
+
+  function applyFilters() {
+    document.querySelectorAll('.tile').forEach(t => {
+      const cat = t.getAttribute('data-cat');
+      const st = t.getAttribute('data-state') || '';
+      const catOk = activeCat === 'all' || cat === activeCat;
+      let statusOk = true;
+      if (activeStatus === 'untagged') statusOk = !st;
+      else if (activeStatus !== 'all') statusOk = st === activeStatus;
+      t.classList.toggle('hidden-by-filter', !(catOk && statusOk));
+    });
+  }
+
+  // Tile button clicks (delegate)
+  grid.addEventListener('click', e => {
+    const btn = e.target.closest('button[data-action]');
+    if (!btn) return;
+    const id = btn.getAttribute('data-id');
+    const action = btn.getAttribute('data-action');
+    if (state[id] === action) {
+      delete state[id];
+    } else {
+      state[id] = action;
+    }
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    render();
+  });
+
+  // Filters
+  document.querySelectorAll('[data-filter]').forEach(b => {
+    b.addEventListener('click', () => {
+      activeCat = b.getAttribute('data-filter');
+      document.querySelectorAll('[data-filter]').forEach(x => x.setAttribute('data-active', x === b ? 'true' : 'false'));
+      applyFilters();
+    });
+  });
+  document.querySelectorAll('[data-status]').forEach(b => {
+    b.addEventListener('click', () => {
+      activeStatus = b.getAttribute('data-status');
+      document.querySelectorAll('[data-status]').forEach(x => x.setAttribute('data-active', x === b ? 'true' : 'false'));
+      applyFilters();
+    });
+  });
+
+  // Copy selections
+  document.getElementById('copy-btn').addEventListener('click', async () => {
+    const lines = [];
+    lines.push('# Direction E · Selection · ' + new Date().toLocaleString());
+    lines.push('');
+    ['use','bench','kill'].forEach(group => {
+      const ids = ASSETS.filter(a => state[a.id] === group);
+      if (ids.length) {
+        lines.push(`## ${group.toUpperCase()} (${ids.length})`);
+        ids.forEach(a => lines.push(`- #${a.id} ${a.title} — images/direction-e-explore/${a.file}`));
+        lines.push('');
+      }
+    });
+    const untagged = ASSETS.filter(a => !state[a.id]);
+    if (untagged.length) {
+      lines.push(`## UNTAGGED (${untagged.length})`);
+      untagged.forEach(a => lines.push(`- #${a.id} ${a.title}`));
+    }
+    const text = lines.join('\n');
+    try {
+      await navigator.clipboard.writeText(text);
+      showToast('Copied · paste back to me');
+    } catch(e) {
+      // Fallback — open a window
+      const w = window.open('', '_blank');
+      w.document.write('<pre style="font-family:monospace;white-space:pre-wrap;padding:24px">' + text.replace(/[<>&]/g, c => ({'<':'&lt;','>':'&gt;','&':'&amp;'}[c])) + '</pre>');
+    }
+  });
+
+  // Reset
+  document.getElementById('reset-btn').addEventListener('click', () => {
+    if (!confirm('Reset all selections? This will clear your tags and reseed with my picks.')) return;
+    state = {};
+    ASSETS.forEach(a => state[a.id] = a.myPick);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    render();
+  });
+
+  function showToast(msg) {
+    const el = document.getElementById('toast');
+    el.textContent = msg;
+    el.style.opacity = '1';
+    setTimeout(() => { el.style.opacity = '0'; }, 1800);
+  }
+
+  // Keyboard: 1=use, 2=bench, 3=kill on whichever tile is hovered (desktop nicety)
+  document.addEventListener('keydown', e => {
+    const map = { '1':'use', '2':'bench', '3':'kill' };
+    const action = map[e.key];
+    if (!action) return;
+    const hover = document.querySelector('.tile:hover');
+    if (!hover) return;
+    const id = hover.getAttribute('data-id');
+    if (state[id] === action) delete state[id]; else state[id] = action;
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    render();
+  });
+
+  render();
+</script>
+
+</body>
+</html>
