@@ -147,6 +147,38 @@ Their audience is Palm Springs locals (with a strong, explicit welcome to the LG
 - **Signature move:** the **interactive intersection map** — six colored MTA-style route lines crossing on a black canvas at five named program stations. Hover a station and only the lines through it light up; click to depart for that program. The "silos × intersections" content thesis literalized as the page's primary navigation device.
 - **Motion:** All on-load `revealUp` staggered entrance for primary blocks (CSS-only, animation-fill: both — never invisible if JS fails). Top-bar ticker auto-scrolls (38s linear). Footer ghost ticker (60s). Map station hover-bloom + scale 1.18×. Sticky-bottom CTA pill IO-faded. All motion paused under `prefers-reduced-motion`.
 
+### Direction F — Off Peak (PRO-MAX, Round 2 — for Paul, sister to Intersections)
+
+**The photography-first quiet sister.** Same Round-2 brief as Direction E ("sexy, editorial, Equinox like — expert staff, optimal environment, no distraction"), routed through photography-first cinema and negative-space restraint instead of maximalist transit graphics. The "no distraction" promise rendered into the layout itself: every major section is one full-bleed B&W frame, type whispers over photographs, slow scroll-cinema. The subway theme is present but kept restrained — a single vertical right-rail "service line" as the only nav, plus one dedicated section with a small intersection figure. Calvin Klein fragrance ad meets boutique training studio.
+
+- **Mood:** A Calvin Klein perfume page about personal training. Quiet, slow, intentional. The room is empty for you.
+- **Fonts:** **Bodoni Moda 6..96** (display didone, regular + italic — pivot moments) + **Jost 300/400/500/600** (geometric sans body) + **JetBrains Mono** (labels). Google Fonts: [Bodoni Moda](https://fonts.google.com/specimen/Bodoni+Moda), [Jost](https://fonts.google.com/specimen/Jost), [JetBrains Mono](https://fonts.google.com/specimen/JetBrains+Mono). Distinct register from Direction E — didone serif instead of condensed sans for primary display.
+- **Colors:**
+  - Ivory `#FAFAF7` (canvas — warm near-white, not pure white)
+  - Paper `#F4F1EA` (alt section background)
+  - Ink `#1A1A1A` (text — warm graphite, not pure black)
+  - Ink-soft `#2E2A24` (secondary text)
+  - **Oxblood `#3D1F1F`** (primary accent — italic pivot words, hover, drop cap, CTA on hover) + Oxblood-soft `#5C2A2A`
+  - MTA red/purple/yellow used **sparingly** — only on program-row route bullets and the small intersection figure (not the headlines)
+  - Photographs are forced to `e-mono` filter (`grayscale(1) contrast(1.04) brightness(0.98)`)
+- **Layout patterns deployed:**
+  1. **Top minimal nav** — sticky transparent ivory backdrop with a single didone-italic wordmark left, 5-link nav center (small mono caps), inkblack `Book consult` pill right
+  2. **Vertical right-rail "service line" (desktop only, lg+)** — fixed right-edge minimal navigation: 7 dots representing page stops (Off Peak / Studio / Programs / Trainers / Lines / Pricing / Visit), connected by a dotted vertical hairline. Active stop scales + fills + reveals its mono label on hover or scroll-position. IO-tracked active state.
+  3. **Full-bleed cinematic hero** — viewport-height B&W photograph (off-peak platform) with a soft inset vignette, big Bodoni "Off *peak.*" display overlaid bottom-left, "A small boutique studio in Palm Springs · One trainer · One client · No distractions" subhead, single ivory CTA pill ("Book your consult — first visit, no charge") + minimal mono caption "From $50 · By appointment · Palm Springs"
+  4. **Floating-numbers stat band** — 4-up: $50 / 1·1 / *none.* (didone italic in oxblood) / 35. Each number sits in negative space with a quiet body-jost caption beneath.
+  5. **Full-bleed about frame** — viewport-height B&W of empty rack spotlight, didone-italic "The room is the product. The trainer is the rest." anchored center-left, body-jost paragraph anchored center-right, "Read on" inline link at the bottom.
+  6. **Drop-cap editorial essay** — narrow centered column (max-w-3xl), oxblood drop-cap (Bodoni italic, 5.4em float-left first letter), 2-paragraph "Letter from the studio" voice, signed "Brian Guzman, owner."
+  7. **Programs as a 5-row vertical list** — paper-canvas background, each row: index numeral (01-05) · 2 route bullets · large didone headline with italic-oxblood pivot ("*Strength* × Recovery.") · short body-jost description · cadence label right-aligned. Border-top + border-bottom hairlines only — no card chrome.
+  8. **Photo break #1** — full-bleed B&W chalked hands on bar, didone-italic centered overlay: "*Knurling, chalk, breath. The vocabulary of an actual session.*" with quiet-cap caption.
+  9. **Trainers as 4 alternating full-bleed spreads** — each row is photograph (md:col-span-7) + text (md:col-span-5) at viewport-height (md:85vh), alternating left/right. Photo: B&W with photo-zoom on scroll IO, vignette overlay, quiet-cap caption. Text side: small mono-caps role line, giant didone first name + italic-oxblood surname (Brian *Guzman.* / Patrick. *Programming.* / Zac. *Stillness.* / Emma. *Welcome.*), body-jost bio.
+  10. **The Lines / intersection figure (small + refined)** — paper-canvas section, narrow centered max-w-4xl. Smaller-scale SVG of the same 6-line × 5-station intersection figure from Direction E, rendered in ivory canvas instead of black. Lines at lower stroke-width (3px), station rings ivory-on-ink. Includes a cross-link back to Direction E for the full-scale interactive version. didone-italic pull quote underneath: "Pick a line. Pick the next stop. We'll get you there together."
+  11. **Centered-pull-quote testimonial** — giant oxblood didone-italic opening quote glyph above an oversized italic Bodoni testimonial centered on the page. T. Kramer, "I have not been *trained* like this in years."
+  12. **Minimalist pricing in negative space** — paper canvas, narrow centered max-w-3xl. Singles row: 3 horizontal cells (30/45/60 min) with mono caps + huge didone numerals, hairline borders only. Packs: 6-row table with mono train code · body description · didone price + per-session rate. Highlight at the bottom: "Complimentary." in didone-italic-oxblood at 6xl with small body explanation + ink CTA pill.
+  13. **Photo break #2** — full-bleed B&W tunnel vanishing point, didone-italic centered overlay: "*The line is long. We'll walk it together.*"
+  14. **Visit slab** — narrow centered max-w-4xl. Giant didone "707 East *Tahquitz* Canyon Way." + italic subhead "Suite 1, Palm Springs. The studio is quiet at this hour." + 4-up contact grid (hours/phone/booking/address) in mono caps + body-jost values + giant ink CTA pill.
+- **Signature move:** **scroll-cinema.** Each major section is a single B&W frame. Photo holds the canvas; type whispers over it; on scroll, the photograph slow-zooms (`photo-zoom` + IO trigger) toward the next section. Combined with the floating right-rail vertical "service line" of stops as the only persistent nav, the page reads like a magazine you're walking through.
+- **Motion:** All `revealUp` staggered entrance for primary blocks (CSS-only, animation-fill: both). Photo-zoom IO triggers `transform: scale(1.03)` over 1.6s on full-bleed photographs. Right-rail active stop tracked via IntersectionObserver `rootMargin: -40% 0px -55% 0px`. All paused under `prefers-reduced-motion`.
+
 ### 21st.dev Component Provenance
 
 | Mockup section | 21st.dev component | Search query | Source file | What we borrowed |
@@ -166,6 +198,9 @@ Their audience is Palm Springs locals (with a strong, explicit welcome to the LG
 | **Hero typography (E)** | "Hero 04" by aliimam.in | `hero oversized editorial typography` | `21st-sources/direction-e-fashion-hero.tsx` | Oversized condensed display headline structure with eyebrow text, grayscale portrait aside, mono caption block, broadsheet rhythm. Translated: replaced grid-mask background with a full-bleed B&W training photograph; baked TDCSPS route bullets directly into the headline letterforms |
 | **Programs cards (E)** | "Features 10" by tailark | `editorial programs grid bordered` | `21st-sources/direction-e-features-corner-decorator.tsx` | The CardDecorator pattern (8px corner ticks at -1px on each corner of a rounded-none bordered card) plus the dashed-rule footer + breathing card structure. Translated to vanilla HTML + Tailwind CDN; stripped React/shadcn scaffolding; kept the corner-glyph discipline as the bauhaus signature for each intersection program |
 | **Testimonial pull quote (E)** | "Editorial Testimonial" (already cached for A+B) | `pull quote oversized testimonial` | `21st-sources/testimonial-editorial-index.tsx` | Reused — oversized index numeral at 8% opacity beside a huge light-weight didone quote with italic-yellow pivot word. Identical pattern to Direction A but rendered in Libre Bodoni instead of Fraunces |
+| **Hero split + minimal nav (F)** | "Minimalist Hero" by mnmlst. | `full-bleed hero minimal photograph` | `21st-sources/direction-f-minimalist-split.tsx` | Negative-space header/footer minimal nav rhythm and the high-contrast didone display approach. Translated to vanilla HTML; dropped the framer-motion entrance and the giant yellow circle behind the portrait; replaced with raw full-bleed photographs and slow scroll-cinema |
+| **Alternating photo trainer spreads (F)** | "Section With Mockup" (fey.com) | `alternating photo magazine spread` | `21st-sources/direction-f-alternating-photo-spread.tsx` | Alternating row composition (photo left/right, text on the opposite side) and the reverseLayout boolean flag pattern. Translated to vanilla HTML; stripped framer-motion + scroll viewport hooks; kept the dual-image layered composition for full-bleed trainer profiles |
+| **Centered pull-quote testimonial (F)** | n/a — derived from existing patterns | n/a | n/a | Custom: giant oxblood didone-italic opening glyph centered above an oversized italic Bodoni testimonial. Different presentation than Direction E's index-numeral pattern — F runs photography-first throughout, so testimonial gets centered breathing space instead of a numbered editorial sidebar |
 
 **Inspiration searches run** (during DIRECTION step, per CLAUDE.md PRO-MAX rules):
 - `hero editorial magazine bold`
@@ -230,6 +265,7 @@ All real, scraped from training-and-discipline.com. Total 15 images.
   - **Direction C** (FRONTEND-FX): `images/og-direction-c.jpg` — same team-of-4 photograph, re-cropped via `sips` to 1200×630 for a wider editorial preview that aligns with the warm-cream "Now Boarding" aesthetic. 182KB, 86% quality.
   - **Direction D** (FRONTEND-FX): `images/og-direction-d.jpg` — `studio-rogue.jpg` (the iconic disco-ball + Rogue rack + Inspire cable + glass doors with palms shot) cropped via Python+Pillow with a top-biased offset (y=80 → y=710) to keep the disco ball in frame at 1200×630. 160KB, 86% quality. Why real over generated for D: this is the brand's most recognizable single image — the disco ball is the whole "After Hours" thesis, and a real photo of it beats any atmospheric generation.
   - **Direction E** (PRO-MAX, Round 2 — Intersections): `images/og-direction-e.jpg` — `direction-e-explore/12-station-sign-intersections.jpg` (the Gemini Pro-generated INTERSECTIONS subway station sign) cropped via `sips` to 1200×630 from a 2752×1536 landscape source. 235KB, 86% quality. Why this image: it's the strongest single asset of the entire Round 2 exploration — perfect text rendering of "INTERSECTIONS · TRAINING · DISCIPLINE · CARE · STILLNESS" on a real-feeling subway station overhead sign. Reads as the brand statement in one frame and clears Paul's brief instantly when shared.
+  - **Direction F** (PRO-MAX, Round 2 — Off Peak): `images/og-direction-f.jpg` — `direction-e-explore/15-off-peak-platform.jpg` (Grok-generated solitary athletic figure on an empty subway platform) cropped via `sips` to 1200×630 from a 2752×1504 landscape source. 141KB, 86% quality. Why this image: it's the literal embodiment of "Off Peak" — solitary figure on an empty platform, late hour, monastic devotion to training. Reads in one frame as the Calvin-Klein-fragrance-quiet register of this direction.
 - **OG title**:
   - Index: `Training & Discipline — Mockup directions · Banana Bytes`
   - Direction A: `Training & Discipline — Palm Springs personal training, by appointment.`
@@ -237,12 +273,14 @@ All real, scraped from training-and-discipline.com. Total 15 images.
   - **Direction C**: `Training & Discipline — Now boarding · Palm Springs personal training`
   - **Direction D**: `Training & Discipline — After hours · Palm Springs personal training`
   - **Direction E**: `Training & Discipline — Intersections · Palm Springs personal training, by appointment.`
+  - **Direction F**: `Training & Discipline — Off Peak · A boutique training studio in Palm Springs, by appointment.`
 - **OG description**:
   - A: "Boutique personal training in downtown Palm Springs. No membership required. Sessions from $50. Book by appointment with one of four certified trainers."
   - B: "A boutique personal-training studio in downtown Palm Springs. Four certified trainers. Sessions by appointment, no membership required. From $50."
   - **C**: "Boutique 1:1 training in downtown Palm Springs. No membership required. By appointment."
   - **D**: "A boutique training studio with a disco ball over the squat rack. No membership required. By appointment."
   - **E**: "Boutique 1:1 training in downtown Palm Springs. Expert staff. Optimal environment. No distraction. From $50, by appointment, no membership required."
+  - **F**: "One trainer, one client, no distractions. Boutique 1:1 training in downtown Palm Springs. Sessions from $50, by appointment, no membership required."
 - **Favicon source**: PRO-MAX-generated `images/favicon.png` + `images/favicon-512.png` (MTA-style route bullets on black). Both directions reference these — consistent identity across all four mockups.
 - **Theme color**:
   - A: `#000000` (dark canvas)
